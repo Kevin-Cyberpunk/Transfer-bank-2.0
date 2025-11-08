@@ -1,0 +1,36 @@
+services:
+  # Servicio de Base de Datos PostgreSQL
+  - type: pserv
+    name: transfers-db
+    plan: free
+    env: docker
+    region: oregon
+    databases:
+      - name: transfers_db
+        user: transfers_user
+
+  # Servicio de la API (Web Service)
+  - type: web
+    name: transfers-api
+    plan: free
+    env: java
+    region: oregon
+    buildCommand: ./gradlew clean build -x test
+    startCommand: java -Dserver.port=$PORT -jar build/libs/*.jar
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: DATABASE_URL
+        fromDatabase:
+          name: transfers-db
+          property: connectionString
+      - key: DB_USER
+        fromDatabase:
+          name: transfers-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: transfers-db
+          property: password
+      - key: JAVA_TOOL_OPTIONS
+        value: "-Xmx512m -XX:MaxMetaspaceSize=256m"
