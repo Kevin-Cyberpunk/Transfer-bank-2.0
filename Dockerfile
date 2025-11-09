@@ -13,6 +13,9 @@ COPY gradle ./gradle
 # Copiar código fuente
 COPY src ./src
 
+# AGREGAR ESTA LÍNEA: Dar permisos de ejecución a gradlew
+RUN chmod +x gradlew
+
 # Compilar la aplicación (sin tests para acelerar)
 RUN ./gradlew clean build -x test --no-daemon
 
