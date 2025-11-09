@@ -1,5 +1,5 @@
 server:
-  port: ${PORT:8080}  # Render asigna el puerto dinámicamente
+  port: ${PORT:10000}  # Render asigna el puerto dinámicamente
 
 spring:
   application:
@@ -7,7 +7,7 @@ spring:
   
   # Base de datos PostgreSQL de Render (URL dinámica)
   r2dbc:
-    url: ${DATABASE_URL:r2dbc:postgresql://localhost:5432/transfers_db}
+    url:  r2dbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_DATABASE:transfers_db}
     username: ${DB_USER:postgres}
     password: ${DB_PASSWORD:Maldonado12478910}
     pool:
