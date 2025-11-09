@@ -1,0 +1,65 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.0'
+    id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = '17'
+    targetCompatibility = '17'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spring Boot WebFlux - Framework reactivo para construir APIs REST no bloqueantes
+    // Usa Project Reactor (Mono y Flux) para manejar streams de datos asincrónicos
+    // ¿Qué es reactivo? En lugar de esperar respuestas (bloqueante),
+    // procesa múltiples peticiones simultáneamente sin bloquear threads
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    
+    // Spring Data R2DBC - ORM reactivo para bases de datos relacionales
+    // R2DBC = Reactive Relational Database Connectivity
+    // Permite operaciones de BD sin bloquear threads
+    // Convierte objetos Java ↔ tablas PostgreSQL
+    implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
+    
+    // Driver R2DBC para PostgreSQL - Conector reactivo específico
+    // Maneja la comunicación asíncrona con PostgreSQL
+    // Conector específico para hablar con PostgreSQL de forma reactiva
+    implementation 'org.postgresql:r2dbc-postgresql:1.0.2.RELEASE'
+    
+    // Driver JDBC PostgreSQL - Necesario para migraciones y scripts iniciales
+    runtimeOnly 'org.postgresql:postgresql'
+    
+    // Lombok - Reduce código boilerplate (@Getter, @Setter, @Data, etc)
+    // Genera automáticamente getters, setters, constructores en tiempo de compilación
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    
+    // Validation - Para validar DTOs con anotaciones (@NotNull, @Min, etc)
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    
+    // Testing - Framework de pruebas con soporte reactivo
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'io.projectreactor:reactor-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+// Configuración explícita de la clase principal
+springBoot {
+    mainClass = 'com.example.transfers.TransfersApplication'
+}
+
+// Configuración para JAR ejecutable
+tasks.named('bootJar') {
+    archiveFileName = "${project.name}-${project.version}.jar"
+}

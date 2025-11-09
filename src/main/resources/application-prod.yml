@@ -1,0 +1,26 @@
+server:
+  port: ${PORT:8080}  # Render asigna el puerto dinámicamente
+
+spring:
+  application:
+    name: transfers-api
+  
+  # Base de datos PostgreSQL de Render (URL dinámica)
+  r2dbc:
+    url: ${DATABASE_URL:r2dbc:postgresql://localhost:5432/transfers_db}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:Maldonado12478910}
+    pool:
+      initial-size: 5
+      max-size: 10
+      max-idle-time: 30m
+  
+  sql:
+    init:
+      mode: always
+
+logging:
+  level:
+    root: INFO
+    com.example.transfers: INFO
+    io.r2dbc.postgresql: INFO
