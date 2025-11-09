@@ -1,0 +1,14 @@
+.git
+.gitignore
+.gradle
+build/
+target/
+*.log
+*.md
+.idea
+.vscode
+*.iml
+.DS_Store
+Thumbs.db
+.env
+.env.*
