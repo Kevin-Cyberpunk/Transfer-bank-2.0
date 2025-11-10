@@ -1,3 +1,26 @@
+/*¿Para qué sirve?
+
+Expone endpoints HTTP (tu API REST)
+Recibe peticiones del cliente (navegador, Postman, curl)
+Mapea URLs a métodos Java:
+
+POST /api/transfers → createTransfer()
+GET /api/accounts → getAllAccounts()
+
+
+
+Responsabilidades:
+
+Validar datos de entrada (@Valid)
+Llamar al Service
+Retornar respuestas HTTP (JSON)
+ NO contiene lógica de negocio (eso va en Service)
+
+Analogía: Es como las rutas en Express.js o views en Django.
+ * 
+ */
+
+
 package com.example.transfers.controller;
 
 import com.example.transfers.dto.AccountUpdateRequest;

@@ -1,3 +1,11 @@
+/*
+ * ¿Para qué sirve?
+
+Define beans (objetos que Spring gestiona)
+En este caso: ejecuta schema.sql automáticamente al arrancar
+Crea las tablas y datos iniciales
+ */
+
 package com.example.transfers.config;
 
 import io.r2dbc.spi.ConnectionFactory;

@@ -1,3 +1,13 @@
+/*¿Para qué sirve?
+
+Igual que AccountRepository pero para transferencias
+Spring genera queries basadas en los nombres de métodos:
+
+findBySourceAccountId() → WHERE source_account_id = ?
+findByStatus() → WHERE status = ?
+ * 
+ */
+
 package com.example.transfers.repository;
 
 import com.example.transfers.model.Transfer;

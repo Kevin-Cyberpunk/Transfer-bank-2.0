@@ -1,3 +1,8 @@
+/*¿Para qué sirve?
+DTO para actualizar cuentas (PUT)
+Todos los campos son opcionales (solo se actualiza lo que se envía)
+ */
+
 package com.example.transfers.dto;
 
 import jakarta.validation.constraints.DecimalMin;

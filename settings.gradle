@@ -1,1 +1,8 @@
+/*
+*Para qué sirve?
+*efine el nombre del proyecto
+*radle usa este nombre para generar el archivo JAR final
+*/
+
+
 rootProject.name = 'demo'

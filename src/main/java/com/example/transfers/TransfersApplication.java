@@ -1,3 +1,18 @@
+/*¿Para qué sirve?
+
+Punto de entrada de la aplicación
+El método main() inicia Spring Boot
+@SpringBootApplication activa:
+
+Auto-configuración
+Escaneo de componentes (@Service, @Controller, etc.)
+Configuración de beans
+
+Analogía: Es como el index.js en Node.js o app.py en Flask.
+ * 
+ */
+
+
 package com.example.transfers;
 
 import org.springframework.boot.SpringApplication;

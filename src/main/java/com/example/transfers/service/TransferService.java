@@ -1,3 +1,11 @@
+/*¿Para qué sirve?
+
+Define el contrato de operaciones de negocio
+Es una interfaz (no implementación)
+Facilita testing y permite múltiples implementaciones
+ * 
+ */
+
 package com.example.transfers.service;
 
 import com.example.transfers.dto.TransferRequest;

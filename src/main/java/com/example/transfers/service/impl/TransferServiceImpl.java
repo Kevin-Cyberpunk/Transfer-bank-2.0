@@ -1,3 +1,15 @@
+/*¿Para qué sirve?**
+- Contiene toda la **lógica de negocio**
+- Orquesta operaciones entre repositorios
+- Valida reglas de negocio (saldo suficiente, cuentas diferentes, etc.)
+
+**Responsabilidades:**
+- Validaciones complejas
+- Transacciones
+- Orquestación de operaciones
+- **NO** maneja HTTP (eso es del Controller)
+ * 
+ */
 package com.example.transfers.service.impl;
 
 import java.math.BigDecimal;

@@ -1,3 +1,11 @@
+/*¿Para qué sirve?
+
+Define qué datos retorna el endpoint
+Se convierte automáticamente a JSON
+Usa patrón Builder para crear objetos fácilmente:
+
+ */
+
 package com.example.transfers.dto;
 
 // ===== VALIDACIONES BEAN VALIDATION =====

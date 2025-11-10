@@ -1,3 +1,12 @@
+/*¿Para qué sirve?
+
+Representa la tabla transfers en la BD
+Guarda el historial de todas las transferencias
+Status es una clase interna con constantes para evitar typos
+ * 
+ */
+
+
 package com.example.transfers.model;
 
 import org.springframework.data.annotation.Id;

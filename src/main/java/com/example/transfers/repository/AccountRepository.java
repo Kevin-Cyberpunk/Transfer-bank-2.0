@@ -1,3 +1,11 @@
+/*¿Para qué sirve?
+
+Interfaz para operaciones CRUD con la BD
+Spring Data genera automáticamente las queries SQL
+NO necesitas escribir código de implementación
+ * 
+ */
+
 package com.example.transfers.repository;
 
 import com.example.transfers.model.Account;

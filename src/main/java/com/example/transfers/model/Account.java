@@ -1,3 +1,22 @@
+/*¿Para qué sirve?
+
+Representa la tabla accounts en la BD
+Mapea columnas SQL a atributos Java:
+
+account_number (SQL) → accountNumber (Java)
+
+
+Incluye métodos de negocio (withdraw(), deposit())
+
+Anotaciones:
+
+@Table("accounts") → Mapea a tabla SQL
+@Id → Marca la clave primaria
+@Data (Lombok) → Genera getters, setters, toString(), etc.
+ * 
+ */
+
+
 package com.example.transfers.model;
 
 import org.springframework.data.annotation.Id; // Marca el ID
